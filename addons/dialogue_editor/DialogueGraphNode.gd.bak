@@ -1,0 +1,449 @@
+@tool
+extends GraphNode
+class_name DialogueGraphNode
+
+var node_id: String = ""
+var dialogue_text: String = ""
+var character: String = ""
+var node_type: String = "normal"  # "entry", "exit", or "normal"
+var responses: Array = []  # Array of {text: String, next_node: String}
+var response_conditions: Array = []  # Array parallel to responses: each is Array of {var_id, op, value}
+
+var type_label: Label
+var type_dropdown: OptionButton
+var char_label: Label
+var dialogue_label: Label
+var text_edit: TextEdit
+var responses_label: Label
+var add_response_btn: Button
+var response_rows: Array = []
+var response_spacers: Array = []
+
+func _add_spacer(height: int = 8, parent: Node = null) -> void:
+	var spacer := Control.new()
+	spacer.custom_minimum_size = Vector2(0, height)
+	if parent:
+		parent.add_child(spacer)
+	else:
+		add_child(spacer)
+
+func _init():
+	node_id = str(Time.get_ticks_msec())
+	name = node_id  # Set node name to match ID for connections
+	title = "Dialogue Node"
+	resizable = true
+	size = Vector2(300, 200)
+
+func setup(char_name: String):
+	character = char_name
+    
+	# Clear any existing children
+	for child in get_children():
+		child.queue_free()
+	response_rows.clear()
+    
+	# Row 0: Type label
+	type_label = Label.new()
+	type_label.text = "Node Type:"
+	add_child(type_label)
+    
+	# Row 1: Type dropdown
+	type_dropdown = OptionButton.new()
+	type_dropdown.add_item("Normal", 0)
+	type_dropdown.add_item("Entry", 1)
+	type_dropdown.add_item("Exit", 2)
+	type_dropdown.selected = 0
+	type_dropdown.item_selected.connect(_on_type_selected)
+	add_child(type_dropdown)
+        
+	# Row 2: Dialogue label
+	_add_spacer(8)
+	dialogue_label = Label.new()
+	dialogue_label.text = "Dialogue:"
+	add_child(dialogue_label)
+    
+	# Row 3: Text edit
+	text_edit = TextEdit.new()
+	text_edit.custom_minimum_size = Vector2(0, 80)
+	text_edit.wrap_mode = TextEdit.LINE_WRAPPING_BOUNDARY
+	text_edit.text_changed.connect(_on_text_changed)
+	add_child(text_edit)
+    
+	# Row 4: Responses label
+	_add_spacer(8)
+	responses_label = Label.new()
+	responses_label.text = "Responses:"
+	add_child(responses_label)
+        
+  # Last: Add response button
+  add_response_btn = Button.new()
+  add_response_btn.text = "+ Add Response"
+  add_response_btn.pressed.connect(_on_add_response)
+  add_child(add_response_btn)
+	add_effect_btn.text = "+ Add Variable Change"
+	add_effect_btn.pressed.connect(_on_add_effect)
+	effects_container.add_child(add_effect_btn)
+    
+	add_child(effects_container)
+    
+	# Setup slots
+	_update_slots()
+
+func _update_slots():
+	# Clear all slots first
+	clear_all_slots()
+	
+	# UI element order:
+	# 0: Type label - INPUT
+	# 1: Type dropdown
+	# 2: Character label
+	# 3: Dialogue label
+	# 4: Text edit
+	# 5: Response label
+	# 6+: Response HBoxContainers (one per response) - OUTPUTS
+	# Then: Add response button
+	# Then: Effects container (label, rows, add button) — stays last
+	
+	# Slot 0: Type label - has input connection (entry point for this node)
+	var has_input = (node_type != "entry")
+	set_slot(0, has_input, 0, Color.CYAN, false, 0, Color.WHITE)
+	
+	# Slot 1: Type dropdown - no connections
+	set_slot(1, false, 0, Color.WHITE, false, 0, Color.WHITE)
+	
+	# Slot 2: Spacer - no connections
+	set_slot(2, false, 0, Color.WHITE, false, 0, Color.WHITE)
+	
+	# Slot 3: Dialogue label - no connections
+	set_slot(3, false, 0, Color.WHITE, false, 0, Color.WHITE)
+	
+	# Slot 4: Text edit - ALWAYS has output if no responses (unless exit)
+	# This is the "next dialogue" connection for linear flow
+	if responses.size() == 0:
+		var has_output = (node_type != "exit")
+		set_slot(4, false, 0, Color.WHITE, has_output, 0, Color.GREEN)
+	else:
+		set_slot(4, false, 0, Color.WHITE, false, 0, Color.WHITE)
+	
+	# Slot 5: Spacer - no connections
+	set_slot(5, false, 0, Color.WHITE, false, 0, Color.WHITE)
+	
+	# Slot 6: Response label - no connections
+	set_slot(6, false, 0, Color.WHITE, false, 0, Color.WHITE)
+	
+	# Slots 6+: For each response, add an output on the spacer row to position the port slightly lower
+	# Spacer rows are inserted before each response row, so indices are 6 + i*2
+	var has_response_output = (node_type != "exit")
+	for i in responses.size():
+		set_slot(9 + i * 2, false, 0, Color.WHITE, has_response_output, 0, Color.GREEN)
+	
+  # Add response button - no connections
+  var add_resp_slot = 9 + responses.size() * 2
+  set_slot(add_resp_slot, false, 0, Color.WHITE, false, 0, Color.WHITE)func _on_type_selected(index: int):
+	if index == 0:  # Normal
+		node_type = "normal"
+		title = "Dialogue Node"
+		modulate = Color(1.0, 1.0, 1.0)
+	elif index == 1:  # Entry
+		node_type = "entry"
+		title = "[ENTRY] Dialogue Node"
+		modulate = Color(1.0, 1.0, 0.8)  # Slight yellow tint
+	elif index == 2:  # Exit
+		node_type = "exit"
+		title = "[EXIT] Dialogue Node"
+		modulate = Color(1.0, 0.8, 0.8)  # Slight red tint
+	
+	_update_slots()
+
+func _on_text_changed():
+	if text_edit:
+		dialogue_text = text_edit.text
+
+func _on_add_response():
+	var response_text = "Option %d" % (responses.size() + 1)
+	responses.append({"text": response_text, "next_node": ""})
+	response_conditions.append([])
+	_rebuild_response_ui()
+	_update_slots()
+
+func _on_remove_response(index: int):
+	responses.remove_at(index)
+	if index >= 0 and index < response_conditions.size():
+		response_conditions.remove_at(index)
+	_rebuild_response_ui()
+	_update_slots()
+
+func _rebuild_response_ui():
+	# Remove existing response rows
+	for row in response_rows:
+		if is_instance_valid(row):
+			remove_child(row)
+			row.queue_free()
+	response_rows.clear()
+	for sp in response_spacers:
+		if is_instance_valid(sp):
+			remove_child(sp)
+			sp.queue_free()
+	response_spacers.clear()
+    
+	# Rebuild response rows as direct children so ports align
+	for i in responses.size():
+		# Spacer row to nudge the port a bit lower
+		var spacer = Control.new()
+		spacer.custom_minimum_size = Vector2(0, 8)
+		add_child(spacer)
+		response_spacers.append(spacer)
+
+		var response_box = HBoxContainer.new()
+		response_box.custom_minimum_size = Vector2(0, 28)
+		response_box.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+        
+		var response_edit = LineEdit.new()
+		response_edit.text = responses[i]["text"]
+		response_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		var response_index = i
+		response_edit.text_changed.connect(func(new_text):
+			responses[response_index]["text"] = new_text
+		)
+		response_box.add_child(response_edit)
+        
+		var remove_btn = Button.new()
+		remove_btn.text = "X"
+		remove_btn.custom_minimum_size = Vector2(30, 0)
+		var btn_index = i
+		remove_btn.pressed.connect(func(): _on_remove_response(btn_index))
+		response_box.add_child(remove_btn)
+
+		# Conditions button
+		var cond_btn = Button.new()
+		# Ensure conditions array is sized
+		while response_conditions.size() <= i:
+			response_conditions.append([])
+		var cond_count = response_conditions[i].size()
+		cond_btn.text = "Cond (%d)" % cond_count
+		cond_btn.custom_minimum_size = Vector2(65, 0)
+		var cond_index = i
+		cond_btn.pressed.connect(func(): _open_conditions_editor(cond_index))
+		response_box.add_child(cond_btn)
+        
+		# Insert response rows before the add button (which is last child)
+		add_child(response_box)
+		response_rows.append(response_box)
+    
+  # Adjust node size based on content
+  size.y = 230 + (responses.size() * 36)
+
+  _update_slots()func _open_conditions_editor(resp_index: int):
+	# Simple popup to edit conditions for this response
+	var popup := Window.new()
+	popup.title = "Conditions for: " + responses[resp_index].get("text", "")
+	popup.size = Vector2i(400, 300)
+	popup.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_MAIN_WINDOW_SCREEN
+	popup.unresizable = false
+	popup.borderless = false
+	popup.always_on_top = true
+	popup.transient = true
+	popup.exclusive = false
+	# Remove min/max buttons
+	popup.min_size = Vector2i(400, 300)
+	popup.max_size = Vector2i(600, 500)
+	# Handle close button
+	popup.close_requested.connect(func(): popup.queue_free())
+	
+	var margin := MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 10)
+	margin.add_theme_constant_override("margin_top", 10)
+	margin.add_theme_constant_override("margin_right", 10)
+	margin.add_theme_constant_override("margin_bottom", 10)
+	margin.set_anchors_preset(Control.PRESET_FULL_RECT)
+	popup.add_child(margin)
+	
+	var container := VBoxContainer.new()
+	container.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	container.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	margin.add_child(container)
+	
+	# Ensure conditions array exists
+	while response_conditions.size() <= resp_index:
+		response_conditions.append([])
+	
+	var scroll := ScrollContainer.new()
+	scroll.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	scroll.custom_minimum_size = Vector2(0, 150)
+	container.add_child(scroll)
+	
+	var cond_list := VBoxContainer.new()
+	cond_list.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	scroll.add_child(cond_list)
+	
+	var rebuild_list: Callable
+	rebuild_list = func():
+		# Properly clear all children
+		for c in cond_list.get_children():
+			cond_list.remove_child(c)
+			c.queue_free()
+		
+		for i in response_conditions[resp_index].size():
+			var row := HBoxContainer.new()
+			var current_idx :int= i  # Capture loop index
+			
+			var var_opt := OptionButton.new()
+			var selected_idx := 0
+			for j in available_variables.size():
+				var v: Dictionary = available_variables[j]
+				var_opt.add_item("%s" % v.get("name", ""))
+				if response_conditions[resp_index][i].get("var_id", "") == v.get("id", ""):
+					selected_idx = j
+			var_opt.selected = selected_idx
+			var_opt.item_selected.connect(func(sel_idx):
+				if sel_idx >= 0 and sel_idx < available_variables.size():
+					response_conditions[resp_index][current_idx]["var_id"] = available_variables[sel_idx].get("id", "")
+			)
+			row.add_child(var_opt)
+			
+			var op_opt := OptionButton.new()
+			op_opt.add_item("==")
+			op_opt.add_item("!=")
+			op_opt.add_item(">=")
+			op_opt.add_item("<=")
+			op_opt.add_item(">")
+			op_opt.add_item("<")
+			op_opt.selected = ["==", "!=", ">=", "<=", ">", "<"].find(response_conditions[resp_index][i].get("op", "=="))
+			op_opt.item_selected.connect(func(sel):
+				response_conditions[resp_index][current_idx]["op"] = ["==", "!=", ">=", "<=", ">", "<"][sel]
+			)
+			row.add_child(op_opt)
+			
+			var val := LineEdit.new()
+			val.text = str(response_conditions[resp_index][i].get("value", ""))
+			val.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+			val.text_changed.connect(func(t): response_conditions[resp_index][current_idx]["value"] = t)
+			row.add_child(val)
+			
+			var rm := Button.new()
+			rm.text = "X"
+			rm.pressed.connect(func():
+				response_conditions[resp_index].remove_at(current_idx)
+				rebuild_list.call()
+			)
+			row.add_child(rm)
+			cond_list.add_child(row)
+	
+	var add_btn := Button.new()
+	add_btn.text = "+ Add Condition"
+	add_btn.pressed.connect(func():
+		response_conditions[resp_index].append({"var_id": available_variables[0].get("id","") if available_variables.size()>0 else "", "op": "==", "value": ""})
+		rebuild_list.call()
+	)
+	container.add_child(add_btn)
+	
+	var close_btn := Button.new()
+	close_btn.text = "Close"
+	close_btn.pressed.connect(func(): 
+		popup.queue_free()
+		_rebuild_response_ui()  # Update the Cond button count
+	)
+	container.add_child(close_btn)
+	
+	rebuild_list.call()
+	get_tree().root.add_child(popup)
+	popup.popup_centered()
+
+func _rebuild_effects_ui():
+	# Remove existing effect rows from container
+	for r in effect_rows:
+		if is_instance_valid(r):
+			effects_container.remove_child(r)
+			r.queue_free()
+	effect_rows.clear()
+
+	# Build rows with variable dropdown and value
+	for i in effects.size():
+		var row := HBoxContainer.new()
+		row.custom_minimum_size = Vector2(0, 26)
+		row.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+		var var_opt := OptionButton.new()
+		# Populate dropdown with available variables
+		var selected_idx := 0
+		for j in available_variables.size():
+			var v: Dictionary = available_variables[j]
+			var_opt.add_item("%s" % v.get("name", ""))
+			# Track selection by var_id
+			if effects[i].get("var_id", "") == v.get("id", ""):
+				selected_idx = j
+		var_opt.selected = selected_idx
+		var idx := i
+		var_opt.item_selected.connect(func(sel_idx):
+			if sel_idx >= 0 and sel_idx < available_variables.size():
+				effects[idx]["var_id"] = available_variables[sel_idx].get("id", "")
+		)
+		row.add_child(var_opt)
+
+		var value_edit := LineEdit.new()
+		value_edit.placeholder_text = "value"
+		value_edit.text = str(effects[i].get("value", ""))
+		value_edit.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		value_edit.text_changed.connect(func(t): effects[idx]["value"] = t)
+		row.add_child(value_edit)
+
+		var remove_btn := Button.new()
+		remove_btn.text = "X"
+		remove_btn.pressed.connect(func():
+			effects.remove_at(idx)
+			_rebuild_effects_ui()
+			_update_slots()
+		)
+		row.add_child(remove_btn)
+
+		effects_container.add_child(row)
+		effect_rows.append(row)
+
+	_update_slots()
+
+func _on_add_effect():
+	var var_id: String = available_variables[0].get("id", "") if available_variables.size() > 0 else ""
+	effects.append({"var_id": var_id, "value": ""})
+	_rebuild_effects_ui()
+	_update_slots()
+
+func get_data() -> Dictionary:
+  return {
+    "id": node_id,
+    "text": dialogue_text,
+    "character": character,
+    "node_type": node_type,
+    "responses": responses,
+    "response_conditions": response_conditions,
+    "position": [position_offset.x, position_offset.y]
+  }func set_data(data: Dictionary):
+  node_id = data.get("id", node_id)
+  name = node_id  # Update node name to match loaded ID
+  dialogue_text = data.get("text", "")
+  character = data.get("character", "")
+  node_type = data.get("node_type", "normal")
+  responses = data.get("responses", [])
+  response_conditions = data.get("response_conditions", [])
+  
+  # Load position from array format
+  var pos_data = data.get("position", [0, 0])
+  if typeof(pos_data) == TYPE_ARRAY and pos_data.size() >= 2:
+    position_offset = Vector2(pos_data[0], pos_data[1])
+  else:
+    position_offset = Vector2.ZERO
+  
+  if text_edit:
+    text_edit.text = dialogue_text
+  
+  if type_dropdown:
+    if node_type == "entry":
+      type_dropdown.selected = 1
+    elif node_type == "exit":
+      type_dropdown.selected = 2
+    else:
+      type_dropdown.selected = 0
+  
+  # Update node type and rebuild UI
+  _on_type_selected(type_dropdown.selected if type_dropdown else 0)
+  _rebuild_response_ui()

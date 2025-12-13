@@ -1,0 +1,166 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://c4pn3h6bbmc0n"
+path="res://.godot/imported/SM_trailer_02.gltf-70f16654d786883126fbbfcac5716bdf.scn"
+
+[deps]
+
+source_file="res://assets/Polygon-City Megapolis/Models/SeaPort/SM_trailer_02.gltf"
+dest_files=["res://.godot/imported/SM_trailer_02.gltf-70f16654d786883126fbbfcac5716bdf.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=1
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=24.0
+animation/trimming=false
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"animations": {},
+"materials": {},
+"meshes": {
+"Cube002": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube002.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cba8cg4s6vut1"
+},
+"Cube008": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube008.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cn5m5m18vu6cw"
+},
+"Cube009": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube009.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://db0wyyysy8jv"
+},
+"Cube010": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube010.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cpgg1racmiqwv"
+},
+"Cube011": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube011.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://bec41b5jpvpbd"
+},
+"Cube012": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube012.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://ckpgqa1gxc8uf"
+},
+"Cube013": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube013.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://b4deopccirgi2"
+},
+"Cube014": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube014.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://rjy7nn03qsip"
+},
+"Root Scene_Cube002": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube002.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cba8cg4s6vut1"
+},
+"Root Scene_Cube008": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube008.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cn5m5m18vu6cw"
+},
+"Root Scene_Cube009": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube009.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://db0wyyysy8jv"
+},
+"Root Scene_Cube010": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube010.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cpgg1racmiqwv"
+},
+"Root Scene_Cube011": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube011.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://bec41b5jpvpbd"
+},
+"Root Scene_Cube012": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube012.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://ckpgqa1gxc8uf"
+},
+"Root Scene_Cube013": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube013.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://b4deopccirgi2"
+},
+"Root Scene_Cube014": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.Cube014.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://rjy7nn03qsip"
+},
+"Root Scene_trailer_02": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.trailer_02.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://ca7cnvewmwavs"
+},
+"trailer_02": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/SeaPort/extracted/SM_trailer_02.trailer_02.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://ca7cnvewmwavs"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"optimizer/enabled": true,
+"optimizer/max_angular_error": 0.00277778,
+"optimizer/max_linear_error": 0.5
+}
+}
+}
+gltf/naming_version=0
+gltf/embedded_image_handling=1

@@ -1,0 +1,214 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cwu2onqptllu"
+path="res://.godot/imported/SM_Ferris wheel_01.gltf-e71610509607ed4c03cbe0d01ffad823.scn"
+
+[deps]
+
+source_file="res://assets/Polygon-City Megapolis/Models/CityProps/SM_Ferris wheel_01.gltf"
+dest_files=["res://.godot/imported/SM_Ferris wheel_01.gltf-e71610509607ed4c03cbe0d01ffad823.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=1
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=24.0
+animation/trimming=false
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"animations": {},
+"materials": {},
+"meshes": {
+"Ferris wheel_01": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.Ferris wheel_01.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://bbvfse3jbjxci"
+},
+"Root Scene_Ferris wheel_01": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.Ferris wheel_01.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://bbvfse3jbjxci"
+},
+"Root Scene_booth_01": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_01.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cb8f7bod6mklx"
+},
+"Root Scene_booth_02": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_02.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://uc210j8kkel4"
+},
+"Root Scene_booth_03": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_03.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://y854d1tubo6u"
+},
+"Root Scene_booth_04": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_04.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://20xldebjyv5l"
+},
+"Root Scene_booth_05": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_05.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://b18tdsoyswa6v"
+},
+"Root Scene_booth_06": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_06.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dxomdqjjefo21"
+},
+"Root Scene_booth_07": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_07.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dwkjuvj0rf4rh"
+},
+"Root Scene_booth_08": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_08.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://rrkh017giytu"
+},
+"Root Scene_wheel_01": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.wheel_01.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://ivj8tf7tcail"
+},
+"booth_01": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_01.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cb8f7bod6mklx"
+},
+"booth_02": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_02.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://uc210j8kkel4"
+},
+"booth_03": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_03.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://y854d1tubo6u"
+},
+"booth_04": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_04.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://20xldebjyv5l"
+},
+"booth_05": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_05.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://b18tdsoyswa6v"
+},
+"booth_06": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_06.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dxomdqjjefo21"
+},
+"booth_07": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_07.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dwkjuvj0rf4rh"
+},
+"booth_08": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.booth_08.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://rrkh017giytu"
+},
+"wheel_01": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_Ferris wheel_01.wheel_01.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://ivj8tf7tcail"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"optimizer/enabled": true,
+"optimizer/max_angular_error": 0.00277778,
+"optimizer/max_linear_error": 0.5
+}
+}
+}
+gltf/naming_version=0
+gltf/embedded_image_handling=1

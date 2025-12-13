@@ -1,0 +1,345 @@
+{
+	"connections": [
+		{
+			"from_node": "4923377",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "4935402",
+			"to_port": 0
+		},
+		{
+			"from_node": "4996043",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5015269",
+			"to_port": 0
+		},
+		{
+			"from_node": "4977624",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "4996043",
+			"to_port": 0
+		},
+		{
+			"from_node": "4935402",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "4977624",
+			"to_port": 0
+		},
+		{
+			"from_node": "5560711",
+			"from_port": 1,
+			"keep_alive": false,
+			"to_node": "5579541",
+			"to_port": 0
+		},
+		{
+			"from_node": "5560711",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5589190",
+			"to_port": 0
+		},
+		{
+			"from_node": "5589190",
+			"from_port": 3,
+			"keep_alive": false,
+			"to_node": "5579541",
+			"to_port": 0
+		},
+		{
+			"from_node": "5589190",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5921222",
+			"to_port": 0
+		},
+		{
+			"from_node": "5921222",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5934359",
+			"to_port": 0
+		},
+		{
+			"from_node": "5589190",
+			"from_port": 1,
+			"keep_alive": false,
+			"to_node": "5956317",
+			"to_port": 0
+		},
+		{
+			"from_node": "5956317",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5934359",
+			"to_port": 0
+		},
+		{
+			"from_node": "5589190",
+			"from_port": 2,
+			"keep_alive": false,
+			"to_node": "5988609",
+			"to_port": 0
+		},
+		{
+			"from_node": "5988609",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5998795",
+			"to_port": 0
+		},
+		{
+			"from_node": "5998795",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "6016293",
+			"to_port": 0
+		}
+	],
+	"nodes": {
+		"4923377": {
+			"character": "Bobby",
+			"event_id": "first_meeting",
+			"id": "4923377",
+			"node_type": "entry",
+			"position": [
+				290.597625732422,
+				698.50048828125
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Welcome inspector. We've been expecting you."
+		},
+		"4935402": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "4935402",
+			"node_type": "normal",
+			"position": [
+				680.0,
+				700.0
+			],
+			"response_conditions": [
+				[]
+			],
+			"responses": [
+				{
+					"next_node": "",
+					"text": "Indeed"
+				}
+			],
+			"text": "We got a call of a dead boy found in our own neighbourhood. How frightful!"
+		},
+		"4977624": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "4977624",
+			"node_type": "normal",
+			"position": [
+				1060.0,
+				720.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Anyways, we've tried nothing and no we've given up. Its up to you to find the killer!"
+		},
+		"4996043": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "4996043",
+			"node_type": "normal",
+			"position": [
+				1470.12573242188,
+				837.775634765625
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "You have until the end of the day, before we get tired an go home."
+		},
+		"5015269": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5015269",
+			"node_type": "exit",
+			"position": [
+				1820.0,
+				840.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Good luck"
+		},
+		"5560711": {
+			"character": "Bobby",
+			"event_id": "second_meeting",
+			"id": "5560711",
+			"node_type": "entry",
+			"position": [
+				220.0,
+				1740.0
+			],
+			"response_conditions": [
+				[],
+				[]
+			],
+			"responses": [
+				{
+					"next_node": "",
+					"text": "Yes"
+				},
+				{
+					"next_node": "",
+					"text": "No"
+				}
+			],
+			"text": "Did you find the killer yet?"
+		},
+		"5579541": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5579541",
+			"node_type": "exit",
+			"position": [
+				800.0,
+				2260.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Well keep looking."
+		},
+		"5589190": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5589190",
+			"node_type": "normal",
+			"position": [
+				800.0,
+				1620.0
+			],
+			"response_conditions": [
+				[
+					{
+						"op": "==",
+						"value": "true",
+						"var_id": "mike_met"
+					}
+				],
+				[
+					{
+						"op": "==",
+						"value": "true",
+						"var_id": "ellise_met"
+					}
+				],
+				[
+					{
+						"op": "==",
+						"value": "true",
+						"var_id": "dog_met"
+					}
+				],
+				[]
+			],
+			"responses": [
+				{
+					"next_node": "",
+					"text": "Mike"
+				},
+				{
+					"next_node": "",
+					"text": "Ellise"
+				},
+				{
+					"next_node": "",
+					"text": "Dog"
+				},
+				{
+					"next_node": "",
+					"text": "I don't know"
+				}
+			],
+			"text": "Really? Who did it?"
+		},
+		"5921222": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5921222",
+			"node_type": "normal",
+			"position": [
+				1420.0,
+				1540.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "What? Mike did it?"
+		},
+		"5934359": {
+			"character": "Bobby",
+			"event_id": "exit_game",
+			"id": "5934359",
+			"node_type": "exit",
+			"position": [
+				2080.46362304688,
+				1997.65734863281
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "I'll go arrest them now. Good job Investigator."
+		},
+		"5956317": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5956317",
+			"node_type": "normal",
+			"position": [
+				1420.0,
+				1980.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "What? It was Ellise? I guess it's always the wife..."
+		},
+		"5988609": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5988609",
+			"node_type": "normal",
+			"position": [
+				1540.0,
+				2520.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "How could it be the dog?"
+		},
+		"5998795": {
+			"character": "Bobby",
+			"event_id": "",
+			"id": "5998795",
+			"node_type": "normal",
+			"position": [
+				1900.0,
+				2520.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Well I guess you are the Investigator."
+		},
+		"6016293": {
+			"character": "Bobby",
+			"event_id": "exit_game",
+			"id": "6016293",
+			"node_type": "exit",
+			"position": [
+				2260.0,
+				2520.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Well go arrest the dog now. Poor fellow will probably get the chair."
+		}
+	}
+}

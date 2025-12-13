@@ -1,0 +1,131 @@
+{
+	"connections": [
+		{
+			"from_node": "5191798",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5199936",
+			"to_port": 0
+		},
+		{
+			"from_node": "5199936",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5260940",
+			"to_port": 0
+		},
+		{
+			"from_node": "5199936",
+			"from_port": 1,
+			"keep_alive": false,
+			"to_node": "5275336",
+			"to_port": 0
+		},
+		{
+			"from_node": "5260940",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "5275336",
+			"to_port": 0
+		},
+		{
+			"from_node": "4638956",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "4651102",
+			"to_port": 0
+		}
+	],
+	"nodes": {
+		"4638956": {
+			"character": "Mike",
+			"event_id": "second_meeting",
+			"id": "4638956",
+			"node_type": "entry",
+			"position": [
+				180.0,
+				860.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "This is a different entry point."
+		},
+		"4651102": {
+			"character": "Mike",
+			"event_id": "",
+			"id": "4651102",
+			"node_type": "exit",
+			"position": [
+				600.0,
+				860.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Goodbye"
+		},
+		"5191798": {
+			"character": "Mike",
+			"event_id": "first_meeting",
+			"id": "5191798",
+			"node_type": "entry",
+			"position": [
+				184.897674560547,
+				129.844467163086
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Hello there"
+		},
+		"5199936": {
+			"character": "Mike",
+			"event_id": "",
+			"id": "5199936",
+			"node_type": "normal",
+			"position": [
+				580.0,
+				140.0
+			],
+			"response_conditions": [
+				[],
+				[]
+			],
+			"responses": [
+				{
+					"next_node": "",
+					"text": "What is your name"
+				},
+				{
+					"next_node": "",
+					"text": "Nothing"
+				}
+			],
+			"text": "What can i help you with?"
+		},
+		"5260940": {
+			"character": "Mike",
+			"event_id": "mike_angry",
+			"id": "5260940",
+			"node_type": "normal",
+			"position": [
+				1040.0,
+				140.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Its' Mike."
+		},
+		"5275336": {
+			"character": "Mike",
+			"event_id": "",
+			"id": "5275336",
+			"node_type": "exit",
+			"position": [
+				1460.0,
+				620.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Goodbye"
+		}
+	}
+}

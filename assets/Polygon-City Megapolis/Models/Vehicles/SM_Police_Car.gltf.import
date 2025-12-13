@@ -1,0 +1,130 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://70ww3ob2xfpe"
+path="res://.godot/imported/SM_Police_Car.gltf-0b02350cc656c81c6c1dc4070cfbd6d5.scn"
+
+[deps]
+
+source_file="res://assets/Polygon-City Megapolis/Models/Vehicles/SM_Police_Car.gltf"
+dest_files=["res://.godot/imported/SM_Police_Car.gltf-0b02350cc656c81c6c1dc4070cfbd6d5.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=0.7
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=1
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=24.0
+animation/trimming=false
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"animations": {},
+"materials": {},
+"meshes": {
+"Police_Car": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Police_Car.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://b5rye0nstu8w1"
+},
+"Root Scene_Police_Car": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Police_Car.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://b5rye0nstu8w1"
+},
+"Root Scene_Wheel_020": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_020.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://db50jrd2fx3q8"
+},
+"Root Scene_Wheel_021": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_021.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://bf3jhqt4id61d"
+},
+"Root Scene_Wheel_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_022.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://rbjkcscj8s8j"
+},
+"Root Scene_Wheel_022001": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_022001.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://d0i2xrt2i4dga"
+},
+"Wheel_020": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_020.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://db50jrd2fx3q8"
+},
+"Wheel_021": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_021.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://bf3jhqt4id61d"
+},
+"Wheel_022": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_022.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://rbjkcscj8s8j"
+},
+"Wheel_022001": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Police_Car.Wheel_022001.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://d0i2xrt2i4dga"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"optimizer/enabled": true,
+"optimizer/max_angular_error": 0.00277778,
+"optimizer/max_linear_error": 0.5
+}
+}
+}
+gltf/naming_version=0
+gltf/embedded_image_handling=1

@@ -1,0 +1,39 @@
+{
+	"connections": [
+		{
+			"from_node": "1111904",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "1119790",
+			"to_port": 0
+		}
+	],
+	"nodes": {
+		"1111904": {
+			"character": "Dog",
+			"event_id": "first_meeting",
+			"id": "1111904",
+			"node_type": "entry",
+			"position": [
+				153.493469238281,
+				451.409057617188
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Woof woof"
+		},
+		"1119790": {
+			"character": "Dog",
+			"event_id": "",
+			"id": "1119790",
+			"node_type": "exit",
+			"position": [
+				620.0,
+				460.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Woof"
+		}
+	}
+}

@@ -1,0 +1,130 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dyvn566het8ye"
+path="res://.godot/imported/SM_Premium_Car_02.gltf-1e0419052ee6f10589147c0b9a72afe9.scn"
+
+[deps]
+
+source_file="res://assets/Polygon-City Megapolis/Models/Vehicles/SM_Premium_Car_02.gltf"
+dest_files=["res://.godot/imported/SM_Premium_Car_02.gltf-1e0419052ee6f10589147c0b9a72afe9.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=0.7
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=1
+meshes/generate_lods=true
+meshes/create_shadow_meshes=false
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=24.0
+animation/trimming=false
+animation/remove_immutable_tracks=false
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"animations": {},
+"materials": {},
+"meshes": {
+"Premium_Car_02": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Premium_Car_02.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://c87akbnml6ogs"
+},
+"Root Scene_Premium_Car_02": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Premium_Car_02.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://c87akbnml6ogs"
+},
+"Root Scene_Wheel_04": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_04.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://df6r8ro3cqipq"
+},
+"Root Scene_Wheel_05": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_05.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cljny3qspgq4d"
+},
+"Root Scene_Wheel_06": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_06.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://sixh2u37wgt6"
+},
+"Root Scene_Wheel_06001": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_06001.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dsx5vr1swj3b"
+},
+"Wheel_04": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_04.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://df6r8ro3cqipq"
+},
+"Wheel_05": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_05.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://cljny3qspgq4d"
+},
+"Wheel_06": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_06.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://sixh2u37wgt6"
+},
+"Wheel_06001": {
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/Polygon-City Megapolis/Models/Vehicles/extracted/SM_Premium_Car_02.Wheel_06001.mesh",
+"save_to_file/make_streamable": "",
+"save_to_file/path": "uid://dsx5vr1swj3b"
+}
+},
+"nodes": {
+"PATH:AnimationPlayer": {
+"optimizer/enabled": true,
+"optimizer/max_angular_error": 0.00277778,
+"optimizer/max_linear_error": 0.5
+}
+}
+}
+gltf/naming_version=0
+gltf/embedded_image_handling=1

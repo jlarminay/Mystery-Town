@@ -1,0 +1,39 @@
+{
+	"connections": [
+		{
+			"from_node": "7056201",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "7059960",
+			"to_port": 0
+		}
+	],
+	"nodes": {
+		"7056201": {
+			"character": "Ellise",
+			"event_id": "first_meeting",
+			"id": "7056201",
+			"node_type": "entry",
+			"position": [
+				327.096740722656,
+				383.545776367188
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Hello"
+		},
+		"7059960": {
+			"character": "Ellise",
+			"event_id": "",
+			"id": "7059960",
+			"node_type": "exit",
+			"position": [
+				820.0,
+				400.0
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Goodbye"
+		}
+	}
+}

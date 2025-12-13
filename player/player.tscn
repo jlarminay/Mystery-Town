@@ -1,0 +1,134 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3exmct38v2d7"]
+
+[ext_resource type="Script" uid="uid://cbqqx2vnfusny" path="res://player/player.gd" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://bbf5stey1awnl" path="res://player/notices.gd" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://cx37fqjp6gxnn" path="res://player/dialogue.gd" id="2_onrkg"]
+[ext_resource type="Script" uid="uid://cm506n38j0vhk" path="res://player/debug.gd" id="4_yw30f"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_4flbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_sh265")
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.67964745, 0)
+current = true
+
+[node name="Notices" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_i3pqv")
+
+[node name="Panel" type="Panel" parent="Notices"]
+layout_mode = 0
+offset_left = -128.0
+offset_top = 4.0
+offset_right = 128.0
+offset_bottom = 44.0
+
+[node name="InteractLabel" type="Label" parent="Notices"]
+layout_mode = 0
+offset_left = -576.0
+offset_top = 4.0
+offset_right = 576.0
+offset_bottom = 44.0
+text = "Press [E] to interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Dialogue" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_onrkg")
+
+[node name="Panel" type="Panel" parent="Dialogue"]
+layout_mode = 0
+offset_left = -512.0
+offset_top = -200.0
+offset_right = 512.0
+offset_bottom = -32.0
+
+[node name="SpeakerLabel" type="Label" parent="Dialogue"]
+layout_mode = 0
+offset_left = -496.0
+offset_top = -192.0
+offset_right = -9.0
+offset_bottom = -161.0
+theme_override_font_sizes/font_size = 22
+text = "Dave"
+
+[node name="DialogueLabel" type="Label" parent="Dialogue"]
+layout_mode = 0
+offset_left = -496.0
+offset_top = -160.0
+offset_right = 496.0
+offset_bottom = -100.0
+text = "This is some dialogue and lots of stuff to talk about will go here"
+autowrap_mode = 3
+
+[node name="ResponseScroll" type="ScrollContainer" parent="Dialogue"]
+layout_mode = 0
+offset_left = -496.0
+offset_top = -112.0
+offset_right = 496.0
+offset_bottom = -40.0
+
+[node name="ResponseContainer" type="VBoxContainer" parent="Dialogue/ResponseScroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ContinueButton" type="Button" parent="Dialogue"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = -72.0
+offset_right = 496.0
+offset_bottom = -40.0
+text = "Continue [E]"
+
+[node name="Debug" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("4_yw30f")
+
+[node name="Panel" type="Panel" parent="Debug"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 256.0
+offset_bottom = 200.0
+
+[node name="Knowledge" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 248.0
+offset_bottom = 192.0
+theme_override_font_sizes/font_size = 13
+text = "- nothing yet"
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="Debug"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 64.0
+offset_bottom = 47.0
+text = "Stuff I Know:"

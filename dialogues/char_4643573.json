@@ -1,0 +1,39 @@
+{
+	"connections": [
+		{
+			"from_node": "4649483",
+			"from_port": 0,
+			"keep_alive": false,
+			"to_node": "4661098",
+			"to_port": 0
+		}
+	],
+	"nodes": {
+		"4649483": {
+			"character": "Micheal",
+			"event_id": "",
+			"id": "4649483",
+			"node_type": "entry",
+			"position": [
+				156.593765258789,
+				583.338806152344
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "*Yep thats a body*"
+		},
+		"4661098": {
+			"character": "Micheal",
+			"event_id": "",
+			"id": "4661098",
+			"node_type": "exit",
+			"position": [
+				630.280456542969,
+				713.940612792969
+			],
+			"response_conditions": [],
+			"responses": [],
+			"text": "Goodbye body"
+		}
+	}
+}

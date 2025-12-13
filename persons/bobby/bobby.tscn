@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://clm1l7a6ot57r"]
+
+[ext_resource type="Script" uid="uid://dxlix1h8oqm62" path="res://persons/bobby/bobby.gd" id="1_nsqn7"]
+[ext_resource type="Texture2D" uid="uid://b06a8k3wx125q" path="res://persons/bobby/bobby.png" id="2_nsqn7"]
+[ext_resource type="Script" uid="uid://by38154n1p5ma" path="res://addons/dialogue_editor/dialogue_node.gd" id="3_cnf24"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_yobmu"]
+radius = 0.3
+
+[node name="bobby" type="StaticBody3D"]
+script = ExtResource("1_nsqn7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_yobmu")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.21381657, 0, 0, 0, 0.21381657, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("2_nsqn7")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1927177, 0)
+text = "Distance"
+
+[node name="DialogueNode" type="Node" parent="."]
+script = ExtResource("3_cnf24")
+character_name = "Bobby"
+metadata/_custom_type_script = "uid://by38154n1p5ma"

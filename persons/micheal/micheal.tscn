@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmc0duobixgxm"]
+
+[ext_resource type="Script" uid="uid://brr5veya5rspq" path="res://persons/dog/dog.gd" id="1_qj4a8"]
+[ext_resource type="Texture2D" uid="uid://cafy0r6u2bxb2" path="res://persons/micheal/micheal.png" id="2_wem2v"]
+[ext_resource type="Script" uid="uid://by38154n1p5ma" path="res://addons/dialogue_editor/dialogue_node.gd" id="3_eaeyl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wem2v"]
+height = 1.0
+
+[node name="micheal" type="StaticBody3D"]
+script = ExtResource("1_qj4a8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, -0.017, 0.39, 0)
+shape = SubResource("CapsuleShape3D_wem2v")
+metadata/_edit_group_ = true
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.21381657, 0, 0, 0, 0.21381657, 0, 0, 0, 1, 0, 0.14262241, 0)
+texture = ExtResource("2_wem2v")
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1927177, 0)
+text = "Distance"
+
+[node name="DialogueNode" type="Node" parent="."]
+script = ExtResource("3_eaeyl")
+character_name = "Micheal"
+metadata/_custom_type_script = "uid://by38154n1p5ma"
