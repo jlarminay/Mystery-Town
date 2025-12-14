@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://b8rlqkr1ygmp3"]
+[gd_scene load_steps=26 format=3 uid="uid://b8rlqkr1ygmp3"]
 
 [ext_resource type="Material" uid="uid://8m15tq6cxrw" path="res://assets/Polygon-City Megapolis/Demo_Day_Profiles/Sky.material" id="1_c7s6e"]
 [ext_resource type="Texture2D" uid="uid://b3d5ynokgctlh" path="res://grass.png" id="2_oysan"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://q3ig2rv3v0nj" path="res://prefabs/sm_hight_tree_02.tscn" id="5_oysan"]
 [ext_resource type="PackedScene" uid="uid://bjtpj5p4pw2hq" path="res://prefabs/sm_bush_02.tscn" id="5_urblq"]
 [ext_resource type="PackedScene" uid="uid://yf2265joqu50" path="res://prefabs/sm_bush_01.tscn" id="8_0t07s"]
+[ext_resource type="PackedScene" uid="uid://cf4ikpslxdj16" path="res://prefabs/sm_police_car.tscn" id="10_oysan"]
 
 [sub_resource type="Sky" id="Sky_w5sjl"]
 sky_material = ExtResource("1_c7s6e")
@@ -225,3 +226,12 @@ metadata/asset_placer_res_id = "uid://q3ig2rv3v0nj"
 [node name="SM_bush_02 (3)" parent="Items" instance=ExtResource("5_urblq")]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -12.217709, 1.3109101, -27.02694)
 metadata/asset_placer_res_id = "uid://bjtpj5p4pw2hq"
+
+[node name="SM_Police_Car" type="Node3D" parent="Items" instance=ExtResource("10_oysan")]
+transform = Transform3D(-0.53311896, -0.25958088, 1.9100794, 0.11766839, 1.9737052, 0.3010699, -1.9240421, 0.19263099, -0.51083744, -20.283733, 3.0120487, 0)
+metadata/asset_placer_res_id = "uid://cf4ikpslxdj16"
+
+[node name="SM_Police_Car2" parent="Items" instance=ExtResource("10_oysan")]
+transform = Transform3D(-1.9201387, 0, 0.5595238, 0, 2.0000002, 0, -0.55952376, 0, -1.9201391, 7.076131, 1.1617765, 36.870697)
+script = null
+metadata/asset_placer_res_id = "uid://cf4ikpslxdj16"
