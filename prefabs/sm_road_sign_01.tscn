@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://0lxhgrm722jb"]
+
+[ext_resource type="ArrayMesh" uid="uid://bhtp64ggrewye" path="res://assets/Polygon-City Megapolis/Models/CityProps/extracted/SM_road sign_01.road sign_01.mesh" id="1_v8gh0"]
+[ext_resource type="Material" uid="uid://cf3thhovcv5g8" path="res://assets/Polygon-City Megapolis/Materials/MainMaterial.material" id="2_xs0qd"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_us8hs"]
+points = PackedVector3Array(0.5281311, 1.0490036, 0.056963027, 0.5820267, 1.0245652, 0.08302748, 0.5281311, 1.0490036, -0.057008028, -0.5282451, 1.0490036, 0.056963027, 0.5820267, 0.691258, 0.14477196, 0.5820267, 1.0245652, -0.0830725, -0.5820267, 1.0245652, 0.08302748, -0.5282451, 1.0490036, -0.057008028, 0.5820267, 0.5812852, 0.16512567, -0.5820267, 0.691258, 0.14477196, 0.5820267, 0.691258, -0.14481696, -0.5820267, 1.0245652, -0.0830725, 0.5820267, 0.46966937, 0.18577224, -0.5820267, 0.5812852, 0.16512567, 0.5820267, 0.5812852, -0.16517068, -0.5820267, 0.691258, -0.14481696, 0.5281311, 0, 0.24932271, 0.5820267, 0.46576744, 0.16493043, -0.5820267, 0.46966937, 0.18577224, 0.5820267, 0.46966937, -0.18581727, -0.5820267, 0.5812852, -0.16517068, 0.5281311, 0, -0.2493189, -0.5282451, 0, 0.24932271, 0.5820267, 0.46576744, -0.16497545, -0.5820267, 0.46576744, 0.16493043, -0.5820267, 0.46966937, -0.18581727, -0.5282451, 0, -0.2493189, -0.5820267, 0.46576744, -0.16497545)
+
+[node name="SM_road sign_01" type="Node3D"]
+
+[node name="MeshRenderer" type="MeshInstance3D" parent="."]
+gi_mode = 2
+mesh = ExtResource("1_v8gh0")
+surface_material_override/0 = ExtResource("2_xs0qd")
+
+[node name="MeshCollider" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshCollider"]
+shape = SubResource("ConvexPolygonShape3D_us8hs")

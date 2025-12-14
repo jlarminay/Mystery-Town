@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://bus6ir7f0wxp7"]
+
+[ext_resource type="PackedScene" uid="uid://b8rlqkr1ygmp3" path="res://map.tscn" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://c5b2afnaqx0x5" path="res://menu.gd" id="1_ouk20"]
+
+[node name="Menu" type="Node3D"]
+script = ExtResource("1_ouk20")
+
+[node name="Map" parent="." instance=ExtResource("1_lti8b")]
+
+[node name="CameraPivot" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot"]
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 22, 22)
+current = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_top = 88.0
+offset_right = 1280.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 50
+text = "Mystery Town"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 296.0
+offset_right = 744.0
+offset_bottom = 327.0
+theme_override_font_sizes/font_size = 30
+text = "Play"
+
+[node name="ExitButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 536.0
+offset_top = 368.0
+offset_right = 744.0
+offset_bottom = 418.0
+theme_override_font_sizes/font_size = 30
+text = "Exit"
+
+[connection signal="pressed" from="Control/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control/ExitButton" to="." method="_on_exit_button_pressed"]

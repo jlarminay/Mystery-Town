@@ -7,7 +7,7 @@ var player: CharacterBody3D
 var distance :float = 0.0
 
 func _ready() -> void:
-  player = get_tree().current_scene.get_node_or_null("player")
+  player = get_tree().current_scene.get_node_or_null("Player")
   snap_to_ground()
 
 func snap_to_ground() -> void:

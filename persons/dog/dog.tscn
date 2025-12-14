@@ -8,7 +8,7 @@
 radius = 0.3
 height = 0.92211914
 
-[node name="dog" type="StaticBody3D"]
+[node name="Dog" type="StaticBody3D"]
 script = ExtResource("1_yobmu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

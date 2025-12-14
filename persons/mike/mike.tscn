@@ -7,7 +7,7 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_pfr4v"]
 radius = 0.3
 
-[node name="mike" type="StaticBody3D"]
+[node name="Mike" type="StaticBody3D"]
 script = ExtResource("1_oc24p")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

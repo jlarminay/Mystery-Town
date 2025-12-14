@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Mystery Town"
-run/main_scene="uid://chrdmxx6v5nq6"
+run/main_scene="uid://bus6ir7f0wxp7"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [asset_placer]
 
-internal/last_int=0
+internal/last_int=2
 
 [autoload]
 
@@ -30,7 +30,7 @@ window/size/viewport_width=1280
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/asset_placer/plugin.cfg", "res://addons/dialogue_editor/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/asset_placer/plugin.cfg", "res://addons/dialogue_editor/plugin.cfg", "res://addons/road-generator/plugin.cfg", "res://addons/terrain_3d/plugin.cfg")
 
 [input]
 
